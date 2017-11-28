@@ -133,7 +133,63 @@ def Ex3():
     
 ####EX4
 def Ex4():
+    Z = Integers(p4)
+    s1 = "Hello World!"
+    m1 = 0
+    i = 0
+    for curr in s1 :
+        m1 += ord(curr) * 2^(8*i)
+        i += 1
+    m1inv = m1.inverse_mod(p4)
+    ypowr1 = Z(c41[1]) * m1inv
+    ypowr1inv = power_mod(ypowr1, p4 - 2, p4)
+    i = 0
+    gamma = 0
+    ui = Z(c41[0])
+    found = 0
+    while gamma < 99 and found == 0:
+        gamma += 1
+        ui = Z(c41[0])
+        i = 0
+        while i < 23 and found == 0:
+            i += 1
+            ui = power_mod(ui, gamma, p4)
+            if ui == Z(c4i[0]) :
+                found = i
+    ypiinv = power_mod(ypowr1inv, gamma^i, p4)
+    mi = c4i[1] * ypiinv
+    si = ""
+    i = 0
+    while mi > 0:
+        i += 1
+        curr = Mod(mi, 2^(8*i)).lift()
+        mi -= curr
+        curr /= 2^(8*(i - 1))
+        si += chr(curr)
+    print("Found : \"" + si + "\"")
+    return si
+
+####EX5
+def Ex5(): ## We start from b(sciper) and test each int to see if it's a square modulo every prime
+    R50 = Integers(p50)
+    R51 = Integers(p51)
+    R52 = Integers(p52)
+    R53 = Integers(p53)
+    b = Sciper^ceil(Sciper/50000)
+    found = 0
+    while found == 0 :
+        b += 1
+        if R50(b).is_square() :
+            if R51(b).is_square() :
+                if R52(b).is_square() :
+                    if R53(b).is_square() :
+                        found = 1
+    print "Found : \"", b, "\""
+    return b
     
 
-
+Ex5()
 Ex4()
+Ex3()
+Ex2()
+Ex1()
