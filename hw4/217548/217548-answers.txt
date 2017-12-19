@@ -1,8 +1,8 @@
 Sciper=217548
 Worked with (list all):
 Q1=you had very low probability to have coleslaw as your random word but the probability that coleslaw is your random word is now one
-Q2=
+Q2=The Tower. Somewhere ahead, it waited for him-the nexus of Time, the nexus of Size, the nexus of Cormorant.
 Q3a=
 Q3b=
-Q4=
+Q4=Let's have a drink in quench bar
 Q5=
